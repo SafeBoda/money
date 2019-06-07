@@ -148,6 +148,7 @@ defmodule Money.Currency do
     RWF: %{name: "Rwanda Franc", symbol: " ", exponent: 0},
     SAR: %{name: "Saudi Riyal", symbol: "﷼", exponent: 2},
     SBD: %{name: "Solomon Islands Dollar", symbol: "$", exponent: 2},
+    SBP: %{name: "Safeboda point", symbol: "SBP", exponent: 0},
     SCR: %{name: "Seychelles Rupee", symbol: "₨", exponent: 2},
     SDG: %{name: "Sudanese Pound", symbol: "SDG", exponent: 2},
     SEK: %{name: "Swedish Krona", symbol: "kr", exponent: 2},

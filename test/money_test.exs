@@ -3,7 +3,7 @@ defmodule MoneyTest do
   doctest Money
 
   require Money.Currency
-  import Money.Currency, only: [usd: 1, eur: 1, clf: 1, jpy: 1, omr: 1, xau: 1, zar: 1]
+  import Money.Currency, only: [usd: 1, eur: 1, clf: 1, jpy: 1, omr: 1, sbp: 1, xau: 1, zar: 1]
 
   test "new/1 with default currency set" do
     try do
@@ -37,6 +37,17 @@ defmodule MoneyTest do
     assert Money.parse("$ -1,000.00", :USD) == {:ok, usd(-100_000)}
     assert Money.parse("$- 1,000.00", :USD) == {:ok, usd(-100_000)}
     assert Money.parse("-1000.0", :USD) == {:ok, usd(-100_000)}
+
+    assert Money.parse("SBP1,000.00", :SBP) == {:ok, sbp(1_000)}
+    assert Money.parse("SBP 1,000.00", :SBP) == {:ok, sbp(1_000)}
+    assert Money.parse("SBP 1,000.0", :SBP) == {:ok, sbp(1_000)}
+    assert Money.parse("SBP 1000.0", :SBP) == {:ok, sbp(1_000)}
+    assert Money.parse("1000.0", :SBP) == {:ok, sbp(1_000)}
+
+    assert Money.parse("SBP-1,000.00", :SBP) == {:ok, sbp(-1_000)}
+    assert Money.parse("SBP -1,000.00", :SBP) == {:ok, sbp(-1_000)}
+    assert Money.parse("SBP- 1,000.00", :SBP) == {:ok, sbp(-1_000)}
+    assert Money.parse("-1000.0", :SBP) == {:ok, sbp(-1_000)}
 
     assert Money.parse(".25", :USD) == {:ok, usd(25)}
     assert Money.parse(",25", :EUR, separator: ".", delimeter: ",") == {:ok, eur(25)}
