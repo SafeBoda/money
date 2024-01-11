@@ -10,7 +10,7 @@ defmodule Money.Mixfile do
       aliases: aliases(),
       name: "Money",
       version: @version,
-      elixir: "~> 1.0",
+      elixir: "~> 1.14",
       deps: deps(),
       docs: fn ->
         [

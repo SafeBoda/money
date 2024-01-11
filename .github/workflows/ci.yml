@@ -7,10 +7,16 @@ jobs:
     strategy:
       matrix:
         include:
-          - otp: 25.1
-            elixir: 1.15.4
-          - otp: 21.3
-            elixir: 1.7.4
+          - elixir: 1.16.x
+            otp: 26.x
+          - elixir: 1.15.x
+            otp: 26.x
+          - elixir: 1.15.x
+            otp: 25.x
+          - elixir: 1.14.x
+            otp: 25.x
+          - elixir: 1.14.x
+            otp: 24.x
 
     steps:
       - uses: actions/checkout@v3

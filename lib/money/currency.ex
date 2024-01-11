@@ -101,7 +101,7 @@ defmodule Money.Currency do
     JMD: %{name: "Jamaican Dollar", symbol: "J$", exponent: 2, number: 388},
     JOD: %{name: "Jordanian Dinar", symbol: "JOD", exponent: 3, number: 400},
     JPY: %{name: "Yen", symbol: "¥", exponent: 0, number: 392},
-    KES: %{name: "Kenyan Shilling", symbol: "KSh", exponent: 2, number: 404},
+    KES: %{name: "Kenyan Shilling", symbol: "KSh", exponent: 0, number: 404},
     KGS: %{name: "Som", symbol: "лв", exponent: 2, number: 417},
     KHR: %{name: "Riel", symbol: "៛", exponent: 2, number: 116},
     KMF: %{name: "Comoro Franc", symbol: "CF", exponent: 0, number: 174},
